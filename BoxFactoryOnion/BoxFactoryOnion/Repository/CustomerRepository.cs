@@ -4,17 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.Interface;
+using Application.Interface.ICustomer;
 
 namespace Infrastructure.Repository
 {
-    public class CustomerRepository
+    public class CustomerRepository : ICustomerRepository
     {
         public Customer CreateNewCustomer(Customer customer)
         {
             return customer;
         }
 
-        public List<Customer> GetCustomers()
+        public List<Customer> GetAllCustomers()
         {
             return new List<Customer>()
             {

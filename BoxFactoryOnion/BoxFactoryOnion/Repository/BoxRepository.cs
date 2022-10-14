@@ -1,8 +1,10 @@
 ﻿using Domain.Entities;
+using
+using Application.Interface.IBox;
 
 namespace Infrastructure.Repository
 {
-    public class BoxRepository
+    public class BoxRepository : IBoxRepository
     {
         public Box CreateNewBox(Box box)
         {

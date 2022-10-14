@@ -4,17 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Application.Interface;
+using Application.Interface.IOrder;
 
 namespace Infrastructure.Repository
 {
-    public class OrderRepository
+    public class OrderRepository : IOrderRepository
     {
         public Order CreateNewOrder(Order order)
         {
             return order;
         }
 
-        public List<Order> GetOrders()
+        public List<Order> GetAllOrders()
         {
             return new List<Order>()
             {
