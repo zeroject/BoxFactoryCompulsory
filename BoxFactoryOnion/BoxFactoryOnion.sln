@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "BoxFactor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{B5953987-B6BF-4BE2-BECC-82F9F3D72579}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{570B4BF7-8478-44AF-9312-4C7C2FD4D33F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B5953987-B6BF-4BE2-BECC-82F9F3D72579}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5953987-B6BF-4BE2-BECC-82F9F3D72579}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5953987-B6BF-4BE2-BECC-82F9F3D72579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{570B4BF7-8478-44AF-9312-4C7C2FD4D33F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{570B4BF7-8478-44AF-9312-4C7C2FD4D33F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{570B4BF7-8478-44AF-9312-4C7C2FD4D33F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{570B4BF7-8478-44AF-9312-4C7C2FD4D33F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

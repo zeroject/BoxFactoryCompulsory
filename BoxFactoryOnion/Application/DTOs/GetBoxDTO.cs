@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.DTOs
 {
-    public class BoxDTO
+    public class GetBoxDTO
     {
         public string BoxName { get; set; }
         public double Price { get; set; }
