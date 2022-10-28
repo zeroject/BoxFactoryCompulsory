@@ -10,6 +10,11 @@ namespace Infrastructure.Repository
             return box;
         }
 
+        public void DeleteBox(Box box)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Box> GetAllBoxes()
         {
             return new List<Box>()
@@ -20,6 +25,11 @@ namespace Infrastructure.Repository
                 new Box(){Id = 4, BoxName="Box 500x500x500", BoxDescription="this is biggest box", BoxDepth=500, BoxHieght=500, BoxWidth=500, isFolded=false, Price=int.MaxValue},
                 new Box(){Id = 5, BoxName="Box 25x3x25", BoxDescription="this is idk box", BoxDepth=25, BoxHieght=3, BoxWidth=25, isFolded=true, Price=20},
             };
+        }
+
+        public Box UpdateBox(Box box)
+        {
+            throw new NotImplementedException();
         }
     }
 }

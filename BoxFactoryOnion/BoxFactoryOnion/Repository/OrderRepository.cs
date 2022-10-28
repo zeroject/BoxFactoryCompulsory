@@ -16,6 +16,11 @@ namespace Infrastructure.Repository
             return order;
         }
 
+        public void DeleteOrder(Order order)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Order> GetAllOrders()
         {
             return new List<Order>()
@@ -23,6 +28,11 @@ namespace Infrastructure.Repository
                 new Order(){ Id = 1, BoxIDList = new List<int>(){1,2,4}, CustomerID=1, DateTime=new DateTime(2022, 5, 23), isDone=false, StatusCode="", TotalPrice=0},
                 new Order(){ Id = 2, BoxIDList = new List<int>(){2,2,2}, CustomerID=3, DateTime=new DateTime(2022, 6, 12), isDone=true, StatusCode="shipped", TotalPrice=0},
             };
+        }
+
+        public Order UpdateOrder(Order order)
+        {
+            throw new NotImplementedException();
         }
     }
 }

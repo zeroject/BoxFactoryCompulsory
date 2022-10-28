@@ -1,4 +1,5 @@
 ﻿using Application.DTOs;
+using Application.Interface.IBox;
 using Application.Interface.ICustomer;
 using AutoMapper;
 using Domain.Entities;
@@ -28,9 +29,26 @@ namespace Application.Service
             return _customerRepository.CreateNewCustomer(customer);
         }
 
-        public List<Customer> GetAllCustomers()
+        public void DeleteCustomer(Customer customer)
         {
-            return _customerRepository.GetAllCustomers();
+            _customerRepository.DeleteCustomer(customer);
+        }
+
+        public List<GetCustomerDTO> GetAllCustomers()
+        {
+            List<Customer> customers = _customerRepository.GetAllCustomers();
+            List<GetCustomerDTO> getCustomerDTOs = new List<GetCustomerDTO>();
+            foreach (var item in customers)
+            {
+                var temp = new GetCustomerDTO { CompanyName = item.CompanyName, LastName = item.LastName, Name = item.Name};
+                getCustomerDTOs.Add(temp);
+            }
+            return getCustomerDTOs;
+        }
+
+        public Customer UpdateCustomer(Customer customer)
+        {
+            return _customerRepository.UpdateCustomer(customer);
         }
     }
 }

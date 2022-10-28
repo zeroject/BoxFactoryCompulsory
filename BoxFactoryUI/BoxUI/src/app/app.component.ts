@@ -8,13 +8,15 @@ import {HttpService} from "../services/http.service";
 })
 export class AppComponent implements OnInit{
   boxName: string = "";
+  boxPrice: number = 0;
+  boxes: any;
   constructor(private http: HttpService) {
 
   }
 
   async ngOnInit() {
     const products = await this.http.getBox();
-    console.log(products);
+    this.boxes = products;
   }
 
   writeProductName() {

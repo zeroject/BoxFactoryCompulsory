@@ -1,4 +1,5 @@
 ﻿using Application.DTOs;
+using Application.Interface.ICustomer;
 using Application.Interface.IOrder;
 using AutoMapper;
 using Domain.Entities;
@@ -28,9 +29,26 @@ namespace Application.Service
             return _orderRepository.CreateNewOrder(order);
         }
 
-        public List<Order> GetAllOrders()
+        public void DeleteOrder(Order order)
         {
-            return _orderRepository.GetAllOrders();
+            _orderRepository.DeleteOrder(order);
+        }
+
+        public List<GetOrderDTO> GetAllOrders()
+        {
+            List<Order> orders = _orderRepository.GetAllOrders();
+            List<GetOrderDTO> getOrderDTOs = new List<GetOrderDTO>();
+            foreach (var item in orders)
+            {
+                var temp = new GetOrderDTO { DateTime = item.DateTime, Id = item.Id, StatusCode = item.StatusCode, TotalPrice = item.TotalPrice };
+                getOrderDTOs.Add(temp);
+            }
+            return getOrderDTOs;
+        }
+
+        public Order UpdateOrder(Order order)
+        {
+            return _orderRepository.UpdateOrder(order);
         }
     }
 }

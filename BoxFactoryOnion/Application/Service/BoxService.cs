@@ -28,9 +28,26 @@ namespace Application.Service
             return _boxRepository.CreateNewBox(box);
         }
 
-        public List<Box> GetAllBoxes()
+        public void DeleteBox(Box box)
         {
-            return _boxRepository.GetAllBoxes();
+            _boxRepository.DeleteBox(box);
+        }
+
+        public List<GetBoxDTO> GetAllBoxes()
+        {
+            List<Box> boxes = _boxRepository.GetAllBoxes();
+            List<GetBoxDTO> getBoxDTOs = new List<GetBoxDTO>();
+            foreach (var item in boxes)
+            {
+                var temp = new GetBoxDTO{ BoxName = item.BoxName, Price = item.Price};
+                getBoxDTOs.Add(temp);
+            }
+            return getBoxDTOs;
+        }
+
+        public Box UpdateBox(Box box)
+        {
+            return _boxRepository.UpdateBox(box);
         }
     }
 }

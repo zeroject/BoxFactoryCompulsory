@@ -11,5 +11,7 @@ namespace Application.Interface.IOrder
     {
         public Order CreateNewOrder(Order order);
         public List<Order> GetAllOrders();
+        public Order UpdateOrder(Order order);
+        public void DeleteOrder(Order order);
     }
 }

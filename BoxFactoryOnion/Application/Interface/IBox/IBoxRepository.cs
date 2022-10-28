@@ -1,4 +1,5 @@
-﻿using Domain.Entities;
+﻿using Application.DTOs;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,7 @@ namespace Application.Interface.IBox
     {
         public Box CreateNewBox(Box box);
         public List<Box> GetAllBoxes();
+        public Box UpdateBox(Box box);
+        public void DeleteBox(Box box);
     }
 }

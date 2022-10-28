@@ -17,7 +17,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public List<Customer> GetAllCustomers()
+        public List<GetCustomerDTO> GetAllCustomers()
         {
             return _customerService.GetAllCustomers();
         }

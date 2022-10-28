@@ -10,7 +10,7 @@ namespace Application.DTOs
     {
         public int Id { get; set; }
         public DateTime DateTime { get; set; }
-        public double TotalPrice { get; set; }
+        public double? TotalPrice { get; set; }
         public string StatusCode { get; set; }
     }
 }

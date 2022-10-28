@@ -16,6 +16,11 @@ namespace Infrastructure.Repository
             return customer;
         }
 
+        public void DeleteCustomer(Customer customer)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Customer> GetAllCustomers()
         {
             return new List<Customer>()
@@ -24,6 +29,11 @@ namespace Infrastructure.Repository
                 new Customer(){ Id = 2, Name="Jucam", LastName="VonAnd", CompanyName="EcoLogi", EMail="juand@ecologi.com", PhoneNumber=22802320},
                 new Customer(){ Id = 3, Name="Alex", LastName="Andy", CompanyName="Andy's", EMail="aa@andysfood.com", PhoneNumber=97392929},
             };
+        }
+
+        public Customer UpdateCustomer(Customer customer)
+        {
+            throw new NotImplementedException();
         }
     }
 }
