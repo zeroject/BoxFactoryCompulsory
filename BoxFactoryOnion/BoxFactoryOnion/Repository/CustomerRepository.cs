@@ -6,34 +6,45 @@ using System.Text;
 using System.Threading.Tasks;
 using Application.Interface;
 using Application.Interface.ICustomer;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repository
 {
     public class CustomerRepository : ICustomerRepository
     {
+        private DbContextOptions<DBContext> _dbContextOptions;
+        public CustomerRepository()
+        {
+            _dbContextOptions = new DbContextOptionsBuilder<DBContext>()
+                .UseSqlServer("").Options;
+        }
         public Customer CreateNewCustomer(Customer customer)
         {
+            using var context = new DBContext(_dbContextOptions, Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped);
+            context.Customers.Add(customer);
+            context.SaveChanges();
             return customer;
         }
 
         public void DeleteCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+            using var context = new DBContext(_dbContextOptions, Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped);
+            context.Customers.Remove(customer);
+            context.SaveChanges();
         }
 
         public List<Customer> GetAllCustomers()
         {
-            return new List<Customer>()
-            {
-                new Customer(){ Id = 1, Name="Frank", LastName="Frank", CompanyName="FrankINC", EMail="frank@frankinc.com", PhoneNumber=23458217},
-                new Customer(){ Id = 2, Name="Jucam", LastName="VonAnd", CompanyName="EcoLogi", EMail="juand@ecologi.com", PhoneNumber=22802320},
-                new Customer(){ Id = 3, Name="Alex", LastName="Andy", CompanyName="Andy's", EMail="aa@andysfood.com", PhoneNumber=97392929},
-            };
+            using var context = new DBContext(_dbContextOptions, Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped);
+            return context.Customers.ToList();
         }
 
         public Customer UpdateCustomer(Customer customer)
         {
-            throw new NotImplementedException();
+            using var context = new DBContext(_dbContextOptions, Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped);
+            context.Customers.Update(customer);
+            context.SaveChanges();
+            return customer;
         }
     }
 }

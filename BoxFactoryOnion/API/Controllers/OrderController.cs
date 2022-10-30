@@ -22,7 +22,35 @@ namespace API.Controllers
             return _orderService.GetAllOrders();
         }
 
-        [HttpPost]
+        [HttpDelete]
+        public ActionResult<Order> DeleteCustomer(Order order)
+        {
+            try
+            {
+                _orderService.DeleteOrder(order);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
+
+        [HttpPost("UpdateCustomer")]
+        public ActionResult<Order> UpdateCustomer(Order order)
+        {
+            try
+            {
+                var customerU = _orderService.UpdateOrder(order);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost("CreateNewCustomer")]
         public ActionResult<Order> CreateNewCustomer(Order order)
         {
             try

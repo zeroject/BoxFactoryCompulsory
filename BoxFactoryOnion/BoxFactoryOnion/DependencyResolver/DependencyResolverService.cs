@@ -9,6 +9,7 @@ using Application.Interface.IBox;
 using Infrastructure.Repository;
 using Application.Interface.ICustomer;
 using Application.Interface.IOrder;
+using Application.Interface.IDatabase;
 
 namespace Infrastructure.DependencyResolver
 {
@@ -19,6 +20,7 @@ namespace Infrastructure.DependencyResolver
             services.AddScoped<IBoxRepository, BoxRepository>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
+            services.AddScoped<IDataBaseRepository, DataBaseRepository>();
         }
     }
 }

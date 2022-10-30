@@ -6,33 +6,45 @@ using System.Text;
 using System.Threading.Tasks;
 using Application.Interface;
 using Application.Interface.IOrder;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repository
 {
     public class OrderRepository : IOrderRepository
     {
+        private DbContextOptions<DBContext> _dbContextOptions;
+        public OrderRepository()
+        {
+            _dbContextOptions = new DbContextOptionsBuilder<DBContext>()
+                .UseSqlServer("").Options;
+        }
         public Order CreateNewOrder(Order order)
         {
+            using var context = new DBContext(_dbContextOptions, Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped);
+            context.Orders.Add(order);
+            context.SaveChanges();
             return order;
         }
 
         public void DeleteOrder(Order order)
         {
-            throw new NotImplementedException();
+            using var context = new DBContext(_dbContextOptions, Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped);
+            context.Orders.Remove(order);
+            context.SaveChanges();
         }
 
         public List<Order> GetAllOrders()
         {
-            return new List<Order>()
-            {
-                new Order(){ Id = 1, BoxIDList = new List<int>(){1,2,4}, CustomerID=1, DateTime=new DateTime(2022, 5, 23), isDone=false, StatusCode="", TotalPrice=0},
-                new Order(){ Id = 2, BoxIDList = new List<int>(){2,2,2}, CustomerID=3, DateTime=new DateTime(2022, 6, 12), isDone=true, StatusCode="shipped", TotalPrice=0},
-            };
+            using var context = new DBContext(_dbContextOptions, Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped);
+            return context.Orders.ToList();
         }
 
         public Order UpdateOrder(Order order)
         {
-            throw new NotImplementedException();
+            using var context = new DBContext(_dbContextOptions, Microsoft.Extensions.DependencyInjection.ServiceLifetime.Scoped);
+            context.Orders.Update(order);
+            context.SaveChanges();
+            return order;
         }
     }
 }

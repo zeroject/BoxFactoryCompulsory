@@ -37,13 +37,13 @@ namespace API.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("UpdateBox")]
         public ActionResult<Box> UpdateBox(Box box)
         {
             try
             {
                 var boxDTO = _boxService.UpdateBox(box);
-                return UpdateBox(boxDTO);
+                return Ok();
             }
             catch (Exception e)
             {
@@ -51,7 +51,7 @@ namespace API.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("CreateNewBox")]
         public ActionResult<Box> CreateNewBox(Box box)
         {
             try

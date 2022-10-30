@@ -8,6 +8,7 @@ using Application.Interface.IBox;
 using Application.Service;
 using Application.Interface.ICustomer;
 using Application.Interface.IOrder;
+using Application.Interface.IDatabase;
 
 namespace Application.DependencyResolver
 {
@@ -18,6 +19,7 @@ namespace Application.DependencyResolver
             services.AddScoped<IBoxService, BoxService>();
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IOrderService, OrderService>();
+            services.AddScoped<IDataBaseService, DataBaseService>();
         }
     }
 }
