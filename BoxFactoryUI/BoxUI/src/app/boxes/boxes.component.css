@@ -1,0 +1,13 @@
+button{
+  color: #282934;
+  font-family: Arial;
+  font-size: large;
+  height: 5%;
+  width: 200px;
+  position: relative;
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-bottom: min(5%);
+  padding-bottom: max(100px);
+  margin-right: 10px;
+}

@@ -26,6 +26,10 @@ export class AppComponent implements OnInit{
     this.boxes = products;
   }
 
+  home(){
+    this.router.navigate(['./home'])
+  }
+
   nextPage(box : Box){
     this.router.navigate(['./box'])
   }

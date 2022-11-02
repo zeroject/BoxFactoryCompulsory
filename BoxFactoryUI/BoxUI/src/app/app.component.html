@@ -1,14 +1,9 @@
 <link rel="stylesheet" href="app.component.css">
 <body>
-  <div id="TopPart">
+<div id="TopPart" (click)="home()">
+  <div id="text">
     BOX FACTORY
   </div>
-
-  <button mat-raised-button (click)="nextPage(box)" *ngFor="let box of boxes" >
-    <ng-container >Box Name : {{box.boxName}}</ng-container>
-    <br>
-    <ng-container>Box Price : {{box.price}}</ng-container>
-  </button>
-
+</div>
 <router-outlet></router-outlet>
 </body>

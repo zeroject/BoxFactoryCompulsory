@@ -1,24 +1,44 @@
-button{
-  color: #282934;
-  font-family: Arial;
-  font-size: large;
-  height: 5%;
-  width: 200px;
-  position: relative;
-  margin-top: 10px;
-  padding-top: 20px;
-  padding-bottom: min(5%);
-  padding-bottom: max(100px);
-  margin-right: 10px;
-}
+
 body{
   background: rgb(246,255,181);
   background: linear-gradient(200deg, rgba(246,255,181,1) 0%, rgba(255,205,110,1) 35%, rgba(255,141,0,1) 100%);
 }
 
 #TopPart{
-  font-size: xxx-large;
-  font-family: "Felix Titling";
+  color: rgba(255,205,110,1);
   padding-top: 20px;
   padding-bottom: 20px;
+  background: #282934;
+}
+#text{
+  font-size: xxx-large;
+  font-family: "Consolas";
+  font-style: initial;
+  padding-left: 10px;
+}
+
+#text:hover{
+  cursor: pointer;
+  webkit-animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
+  animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
+}
+@-webkit-keyframes flip-horizontal-bottom {
+  0% {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
+  }
+}
+@keyframes flip-horizontal-bottom {
+  0% {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
+  }
 }

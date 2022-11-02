@@ -1,1 +1,15 @@
-<p>homescreen works!</p>
+<div align="center" id="Content">
+  <mat-label id="toptext">LOGIN</mat-label>
+  <br>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input [(ngModel)]="email" matInput>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input [(ngModel)]="password" matInput type="password" (keydown.enter)="enter()">
+  </mat-form-field>
+  <br>
+  <img id="img" src="https://www.transparentpng.com/thumb/box/real-cardboard-box-png-hd--UsWnQV.png">
+</div>

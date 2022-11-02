@@ -1,1 +1,5 @@
-<p>boxes works!</p>
+<button mat-raised-button (click)="nextPage(box)" *ngFor="let box of boxes" >
+  <ng-container >Box Name : {{box.boxName}}</ng-container>
+  <br>
+  <ng-container>Box Price : {{box.price}}</ng-container>
+</button>

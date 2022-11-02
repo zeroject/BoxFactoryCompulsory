@@ -14,10 +14,17 @@ import { BoxesComponent } from './boxes/boxes.component';
 import {MatRadioModule} from "@angular/material/radio";
 import {MatBottomSheetModule} from "@angular/material/bottom-sheet";
 import {RouterModule, Routes} from "@angular/router";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 const routes: Routes = [
   {
     path: 'box', component: BoxesComponent
+  },
+  {
+    path: 'home', component: HomescreenComponent
+  },
+  {
+    path: '**', redirectTo: 'home'
   }
 ]
 
@@ -38,7 +45,8 @@ const routes: Routes = [
     MatButtonModule,
     MatCardModule,
     MatRadioModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
