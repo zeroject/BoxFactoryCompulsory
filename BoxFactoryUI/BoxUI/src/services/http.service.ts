@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import axios from "axios";
 
 export const customAxios = axios.create({
-  baseURL: 'http://localhost:5089'
+  baseURL: 'https://localhost:7089'
 })
 
 @Injectable({
@@ -14,6 +14,6 @@ export class HttpService {
 
   async getBox(){
     const httpResponse = await customAxios.get('Box');
-    httpResponse.data;
+    return httpResponse.data;
   }
 }

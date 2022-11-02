@@ -1,0 +1,24 @@
+button{
+  color: #282934;
+  font-family: Arial;
+  font-size: large;
+  height: 5%;
+  width: 200px;
+  position: relative;
+  margin-top: 10px;
+  padding-top: 20px;
+  padding-bottom: min(5%);
+  padding-bottom: max(100px);
+  margin-right: 10px;
+}
+body{
+  background: rgb(246,255,181);
+  background: linear-gradient(200deg, rgba(246,255,181,1) 0%, rgba(255,205,110,1) 35%, rgba(255,141,0,1) 100%);
+}
+
+#TopPart{
+  font-size: xxx-large;
+  font-family: "Felix Titling";
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

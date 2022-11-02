@@ -11,6 +11,15 @@ import { HomescreenComponent } from './homescreen/homescreen.component';
 import { CustomersComponent } from './customers/customers.component';
 import { OrdersComponent } from './orders/orders.component';
 import { BoxesComponent } from './boxes/boxes.component';
+import {MatRadioModule} from "@angular/material/radio";
+import {MatBottomSheetModule} from "@angular/material/bottom-sheet";
+import {RouterModule, Routes} from "@angular/router";
+
+const routes: Routes = [
+  {
+    path: 'box', component: BoxesComponent
+  }
+]
 
 @NgModule({
   declarations: [
@@ -20,14 +29,17 @@ import { BoxesComponent } from './boxes/boxes.component';
     OrdersComponent,
     BoxesComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatInputModule,
-        FormsModule,
-        MatButtonModule,
-        MatCardModule
-    ],
+  imports: [
+    RouterModule.forRoot(routes),
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    FormsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatRadioModule,
+    MatBottomSheetModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

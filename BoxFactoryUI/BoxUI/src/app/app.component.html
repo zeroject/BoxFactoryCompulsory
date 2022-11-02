@@ -1,19 +1,14 @@
-<div>
+<link rel="stylesheet" href="app.component.css">
+<body>
+  <div id="TopPart">
+    BOX FACTORY
+  </div>
 
-  <mat-form-field>
-    <input matInput [(ngModel)]="boxName">
-  </mat-form-field>
+  <button mat-raised-button (click)="nextPage(box)" *ngFor="let box of boxes" >
+    <ng-container >Box Name : {{box.boxName}}</ng-container>
+    <br>
+    <ng-container>Box Price : {{box.price}}</ng-container>
+  </button>
 
-  <br>
-    <mat-form-field>
-      <input type="number" matInput [(ngModel)]="boxPrice">
-    </mat-form-field>
-
-  <br>
-  <button mat-raised-button (click)="writeProductName()">Click</button>
-
-  <mat-card *ngFor="let p of boxes">
-    {{p | json}}
-  </mat-card>
-
-</div>
+<router-outlet></router-outlet>
+</body>
