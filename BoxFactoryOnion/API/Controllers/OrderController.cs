@@ -17,13 +17,13 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public List<GetOrderDTO> GetAllCustomers()
+        public List<GetOrderDTO> GetAllOrders()
         {
             return _orderService.GetAllOrders();
         }
 
         [HttpDelete]
-        public ActionResult<Order> DeleteCustomer(Order order)
+        public ActionResult<Order> DeleteOrder(Order order)
         {
             try
             {
@@ -36,8 +36,8 @@ namespace API.Controllers
             }
         }
 
-        [HttpPost("UpdateCustomer")]
-        public ActionResult<Order> UpdateCustomer(Order order)
+        [HttpPost("UpdateOrder")]
+        public ActionResult<Order> UpdateOrder(Order order)
         {
             try
             {
@@ -50,8 +50,8 @@ namespace API.Controllers
             }
         }
 
-        [HttpPost("CreateNewCustomer")]
-        public ActionResult<Order> CreateNewCustomer(Order order)
+        [HttpPost("CreateNewOrder")]
+        public ActionResult<Order> CreateNewOrder(Order order)
         {
             try
             {

@@ -24,12 +24,17 @@ namespace Infrastructure
                 .Property(f => f.Id)
                 .ValueGeneratedOnAdd();
             model.Entity<Order>()
+                .HasOne<Customer>()
+                .WithMany()
+                .HasForeignKey(f => f.CustomerID)
+                .OnDelete(DeleteBehavior.Cascade);
+            model.Entity<Order>()
                 .Property(f => f.Id)
                 .ValueGeneratedOnAdd();
             model.Entity<Box>()
                 .HasOne<Order>()
-                .WithMany(f => f.boxes)
-                .HasForeignKey(f => f.Id)
+                .WithMany()
+                .HasForeignKey(f => f.orderID)
                 .OnDelete(DeleteBehavior.Cascade);
         }
 

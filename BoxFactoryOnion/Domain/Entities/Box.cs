@@ -16,5 +16,6 @@ namespace Domain.Entities
         public double BoxDepth { get; set; }
         public double Price { get; set; }
         public bool isFolded { get; set; }
+        public int orderID { get; set; }
     }
 }

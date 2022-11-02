@@ -10,8 +10,7 @@ namespace Domain.Entities
     {
         public int Id { get; set; }
         public DateTime DateTime { get; set; }
-        public ICollection<Box> boxes { get; set; }
-        public int? CustomerID { get; set; }
+        public int CustomerID { get; set; }
         public double? TotalPrice { get; set; }
         public bool isDone { get; set; }
         public string? StatusCode { get; set; }
