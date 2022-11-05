@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import axios from "axios";
 import {CustomersComponent} from "../app/customers/customers.component";
+import {OrdersComponent} from "../app/orders/orders.component";
 
 export const customAxios = axios.create({
   baseURL: 'https://localhost:7089'
@@ -18,6 +19,11 @@ export class HttpService {
     return httpResponse.data;
   }
 
+  async getOrder(){
+    const httpResponse = await customAxios.get('Order');
+    return httpResponse.data;
+  }
+
   async getCustommer(){
     const httpResponse = await customAxios.get('Custommer');
     return httpResponse.data;
@@ -30,6 +36,11 @@ export class HttpService {
 
   async createCustommer(custommer: { name: string, lastName: string, eMail: string, companyName: string, phoneNumber: number, id: number }){
     const httpResult = await customAxios.post<Custommer>('Custommer/CreateNewCustomer', custommer)
+    return httpResult.data;
+  }
+
+  async createOrder(order: { date: string; totalPrice: string; customerID: number; id: number; isDone: boolean; status: string }){
+    const httpResult = await customAxios.post<Order>('Order/CreateNewOrder', order)
     return httpResult.data;
   }
 }
@@ -52,4 +63,12 @@ interface Custommer{
   companyName : string,
   phoneNumber : number,
   id : number
+}
+interface Order{
+  id: number;
+  totalPrice: number;
+  statusCode: string;
+  customerID: number;
+  isDone: boolean;
+  dateTime: string;
 }
