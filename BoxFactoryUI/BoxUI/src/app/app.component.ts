@@ -27,10 +27,10 @@ export class AppComponent implements OnInit{
   }
 
   home(){
-    this.router.navigate(['./home'])
+    this.router.navigate(['./login'])
   }
 
-  nextPage(box : Box){
+  nextPage(){
     this.router.navigate(['./box'])
   }
 

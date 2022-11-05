@@ -1,1 +1,41 @@
-<p>orders works!</p>
+<div id="text">
+  <mat-label>
+    Custommer List
+  </mat-label>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Create New Custommer
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input [(ngModel)]="name" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input [(ngModel)]="lastName" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input [(ngModel)]="eMail" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Company Name</mat-label>
+      <input [(ngModel)]="companyName" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>PhoneNumber</mat-label>
+      <input [(ngModel)]="phoneNumber" matInput>
+    </mat-form-field>
+    <button mat-raised-button id="cBut" (click)="CreateCustomer()">Create</button>
+  </mat-expansion-panel>
+</div>
+<br>
+<button mat-raised-button id="but" *ngFor="let custommer of custommers" >
+  <ng-container >Name : {{custommer.name}}</ng-container>
+  <br>
+  <ng-container>Last Name : {{custommer.lastName}}</ng-container>
+  <br>
+  <ng-container>Company Name : {{custommer.companyName}}</ng-container>
+</button>

@@ -15,16 +15,27 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatBottomSheetModule} from "@angular/material/bottom-sheet";
 import {RouterModule, Routes} from "@angular/router";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatExpansionModule} from "@angular/material/expansion";
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: 'box', component: BoxesComponent
   },
   {
-    path: 'home', component: HomescreenComponent
+    path: 'login', component: HomescreenComponent
   },
   {
-    path: '**', redirectTo: 'home'
+    path: 'home', component: HomeComponent
+  },
+  {
+    path: 'order', component: OrdersComponent
+  },
+  {
+    path: 'user', component: CustomersComponent
+  },
+  {
+    path: '**', redirectTo: 'login'
   }
 ]
 
@@ -34,20 +45,22 @@ const routes: Routes = [
     HomescreenComponent,
     CustomersComponent,
     OrdersComponent,
-    BoxesComponent
+    BoxesComponent,
+    HomeComponent
   ],
-  imports: [
-    RouterModule.forRoot(routes),
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    FormsModule,
-    MatButtonModule,
-    MatCardModule,
-    MatRadioModule,
-    MatBottomSheetModule,
-    MatButtonToggleModule
-  ],
+    imports: [
+        RouterModule.forRoot(routes),
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        FormsModule,
+        MatButtonModule,
+        MatCardModule,
+        MatRadioModule,
+        MatBottomSheetModule,
+        MatButtonToggleModule,
+        MatExpansionModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

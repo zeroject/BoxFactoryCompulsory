@@ -17,7 +17,7 @@ export class HomescreenComponent implements OnInit {
   }
 
   enter(){
-    this.router.navigate(['./box'])
+    this.router.navigate(['./home'])
   }
 
 }

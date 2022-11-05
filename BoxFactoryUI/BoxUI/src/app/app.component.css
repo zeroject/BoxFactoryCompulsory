@@ -19,26 +19,27 @@ body{
 
 #text:hover{
   cursor: pointer;
-  webkit-animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
-  animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) forwards;
+  -webkit-animation: flip-horizontal-top 0.4s ease-in-out alternate both;
+  animation: flip-horizontal-top 0.4s ease-in-out alternate both;
 }
-@-webkit-keyframes flip-horizontal-bottom {
+@-webkit-keyframes flip-horizontal-top {
   0% {
     -webkit-transform: rotateX(0);
     transform: rotateX(0);
   }
   100% {
-    -webkit-transform: rotateX(-180deg);
-    transform: rotateX(-180deg);
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
   }
 }
-@keyframes flip-horizontal-bottom {
+@keyframes flip-horizontal-top {
   0% {
     -webkit-transform: rotateX(0);
     transform: rotateX(0);
   }
   100% {
-    -webkit-transform: rotateX(-180deg);
-    transform: rotateX(-180deg);
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
   }
 }
+

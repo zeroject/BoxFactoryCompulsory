@@ -1,8 +1,8 @@
-button{
+#but{
   color: #282934;
   font-family: Arial;
   font-size: large;
-  height: 5%;
+  height: 150px;
   width: 200px;
   position: relative;
   margin-top: 10px;
@@ -10,4 +10,17 @@ button{
   padding-bottom: min(5%);
   padding-bottom: max(100px);
   margin-right: 10px;
+}
+mat-expansion-panel-header{
+
+}
+mat-expansion-panel{
+  margin-left: 15%;
+  margin-top: -1.8%;
+  margin-right: 70%;
+}
+#text{
+  font-size: xxx-large;
+  font-family: Consolas;
+  margin-top: 1%;
 }

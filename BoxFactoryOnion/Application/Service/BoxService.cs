@@ -39,7 +39,7 @@ namespace Application.Service
             List<GetBoxDTO> getBoxDTOs = new List<GetBoxDTO>();
             foreach (var item in boxes)
             {
-                var temp = new GetBoxDTO{ BoxName = item.BoxName, Price = item.Price};
+                var temp = new GetBoxDTO{ BoxName = item.BoxName, Price = item.Price, boxOrderNum = item.orderID};
                 getBoxDTOs.Add(temp);
             }
             return getBoxDTOs;

@@ -1,0 +1,20 @@
+#OrderBut{
+  margin-top: 5%;
+}
+#UserBut{
+  margin-top: 10px;
+}
+#BoxBut{
+  margin-top: 10px;
+}
+#text{
+  margin-top: 10%;
+  font-family: Consolas;
+  font-size: xxx-large;
+}
+button{
+  height: 100px;
+  width: 500px;
+  font-size: xxx-large;
+  font-family: Consolas;
+}

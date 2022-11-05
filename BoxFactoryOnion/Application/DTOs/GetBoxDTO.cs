@@ -10,5 +10,6 @@ namespace Application.DTOs
     {
         public string BoxName { get; set; }
         public double Price { get; set; }
+        public int boxOrderNum { get; set; }
     }
 }
