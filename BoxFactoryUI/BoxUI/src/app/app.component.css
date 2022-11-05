@@ -1,0 +1,45 @@
+
+body{
+  background: rgb(246,255,181);
+  background: linear-gradient(200deg, rgba(246,255,181,1) 0%, rgba(255,205,110,1) 35%, rgba(255,141,0,1) 100%);
+}
+
+#TopPart{
+  color: rgba(255,205,110,1);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #282934;
+}
+#text{
+  font-size: xxx-large;
+  font-family: "Consolas";
+  font-style: initial;
+  padding-left: 10px;
+}
+
+#text:hover{
+  cursor: pointer;
+  -webkit-animation: flip-horizontal-top 0.4s ease-in-out alternate both;
+  animation: flip-horizontal-top 0.4s ease-in-out alternate both;
+}
+@-webkit-keyframes flip-horizontal-top {
+  0% {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+  }
+}
+@keyframes flip-horizontal-top {
+  0% {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+  }
+}
+

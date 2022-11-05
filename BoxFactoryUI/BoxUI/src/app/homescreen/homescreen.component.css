@@ -1,0 +1,21 @@
+.mat-form-field{
+  width: 25%;
+  text-align: center;
+  align-content: center;
+  z-index: 2;
+}
+
+#toptext{
+  font-size: xxx-large;
+}
+
+#Content{
+  margin-top: 15%;
+}
+
+#img{
+  position: absolute;
+  bottom: 10px; right: 5px;
+  height: 550px;
+  z-index: 1;
+}

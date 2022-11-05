@@ -1,0 +1,53 @@
+<div id="text">
+  <mat-label>
+    Box List
+  </mat-label>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Create New Box
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <mat-label>Box Name</mat-label>
+      <input [(ngModel)]="boxName" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Box Price</mat-label>
+      <input [(ngModel)]="boxPrice" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Box OrderNum</mat-label>
+      <input [(ngModel)]="boxOrderNum" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Box Desc</mat-label>
+      <input [(ngModel)]="boxDescription" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Box Height</mat-label>
+      <input [(ngModel)]="boxHieght" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Box Width</mat-label>
+      <input [(ngModel)]="boxWidth" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Box Depth</mat-label>
+      <input [(ngModel)]="boxDepth" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>isFolded</mat-label>
+      <input [(ngModel)]="isFolded" matInput>
+    </mat-form-field>
+    <button mat-raised-button id="cBut" (click)="CreateBox()">Create</button>
+  </mat-expansion-panel>
+</div>
+<br>
+<button mat-raised-button id="but" *ngFor="let box of boxes" >
+  <ng-container >Box Name : {{box.boxName}}</ng-container>
+  <br>
+  <ng-container>Box Price : {{box.price}}</ng-container>
+  <br>
+  <ng-container>Box Order Num : {{box.boxOrderNum}}</ng-container>
+</button>

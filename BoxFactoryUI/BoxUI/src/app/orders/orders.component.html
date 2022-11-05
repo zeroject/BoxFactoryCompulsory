@@ -1,0 +1,35 @@
+<div id="text">
+  <mat-label>
+    Order List
+  </mat-label>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Create New Order
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <mat-label>TotalPrice</mat-label>
+      <input [(ngModel)]="totalPrice" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>CustomerID</mat-label>
+      <input [(ngModel)]="status" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Status</mat-label>
+      <input [(ngModel)]="customerID" matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>isDone</mat-label>
+      <input [(ngModel)]="isDone" matInput>
+    </mat-form-field>
+    <button mat-raised-button id="cBut" (click)="CreateOrder()">Create</button>
+  </mat-expansion-panel>
+</div>
+<br>
+<button mat-raised-button id="but" *ngFor="let order of orders" >
+  <ng-container >CustomerID : {{order.customerID}}</ng-container>
+  <br>
+  <ng-container>Total Price : {{order.totalPrice}}</ng-container>
+</button>
